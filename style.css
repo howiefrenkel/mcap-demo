@@ -11,13 +11,18 @@ body {
   justify-content: center;
   align-items: flex-start;
   min-height: 100vh;
-  padding: 20px;
+  /* Remove horizontal padding so the page can occupy the full viewport width */
+  padding: 0;
 }
 
 .page {
   position: relative;
-  width: 100%;
-  max-width: 1024px;
+  /* Set the width to the full viewport width (capped at 1800px) so the page
+     fills the screen on desktop displays. Previously, a 1024px max-width
+     required browser zooming to fill larger screens. Using 100vw expands
+     horizontally across the viewport without manual zooming. */
+  width: 100vw;
+  max-width: 1800px;
   /* Maintain aspect ratio similar to original images (2048 x 1016) */
   aspect-ratio: 2048 / 1016;
   overflow: visible;
